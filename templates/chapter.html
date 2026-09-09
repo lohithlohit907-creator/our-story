@@ -1,0 +1,128 @@
+{% extends "base.html" %}
+
+{% block title %}
+{{ chapter_title }} ❤️
+{% endblock %}
+
+{% block content %}
+
+<main class="chapter-page">
+
+    <!-- Soft background -->
+    <div class="chapter-background"></div>
+
+
+    <!-- Floating decorations -->
+    <div class="chapter-particles">
+        <span>✦</span>
+        <span>♥</span>
+        <span>✦</span>
+        <span>•</span>
+        <span>♥</span>
+        <span>✦</span>
+        <span>•</span>
+    </div>
+
+
+    <section class="chapter-content">
+
+        <!-- =========================================
+             CHAPTER NUMBER
+        ========================================== -->
+
+        <p class="chapter-number">
+            CHAPTER {{ chapter_number }}
+        </p>
+
+
+        <!-- =========================================
+             CHAPTER TITLE
+        ========================================== -->
+
+        <h1 class="chapter-title">
+            {{ chapter_title }}
+        </h1>
+
+
+        <!-- =========================================
+             DECORATIVE DIVIDER
+        ========================================== -->
+
+        <div class="chapter-divider">
+
+            <span></span>
+
+            <i>♥</i>
+
+            <span></span>
+
+        </div>
+
+
+        <!-- =========================================
+             MANGA IMAGES
+             Supports multiple images
+        ========================================== -->
+
+        <div class="chapter-images">
+
+            {% for img in images %}
+
+            <div class="chapter-image-wrapper">
+
+                <img
+                    src="{{ url_for('static', filename=img) }}"
+                    alt="{{ chapter_title }}"
+                    class="chapter-image"
+                >
+
+            </div>
+
+            {% endfor %}
+
+        </div>
+
+
+        <!-- =========================================
+             STORY
+        ========================================== -->
+
+        <article class="chapter-story">
+
+            <div class="story-decoration">
+                ♥
+            </div>
+
+            <p>
+                {{ story }}
+            </p>
+
+            <div class="story-decoration">
+                ♥
+            </div>
+
+        </article>
+
+
+        <!-- =========================================
+             NEXT BUTTON
+        ========================================== -->
+
+        {% if next_chapter %}
+
+        <a
+            href="{{ next_chapter }}"
+            class="chapter-next"
+        >
+            NEXT
+            <span>→</span>
+        </a>
+
+        {% endif %}
+
+
+    </section>
+
+</main>
+
+{% endblock %}

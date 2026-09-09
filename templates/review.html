@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Our Story — Your Review ❤️</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/review.css') }}">
+</head>
+
+<body>
+
+    <!-- Romantic background -->
+    <div class="background-glow"></div>
+
+    <!-- Falling particles -->
+    <div class="snow-container"></div>
+
+    <!-- Floating hearts -->
+    <div class="hearts-container"></div>
+
+
+    <!-- Main content -->
+    <main class="review-page">
+
+        <div class="manga-card">
+
+            <!-- Small chapter label -->
+            <div class="chapter-label">
+                THE END... OR MAYBE THE BEGINNING ❤️
+            </div>
+
+            <!-- Main title -->
+            <h1>
+                So... how was our journey?
+            </h1>
+
+            <div class="heart-line">
+                ♡ ───────── ❤️ ───────── ♡
+            </div>
+
+
+            <!-- Message -->
+            <p class="intro-text">
+                13 chapters...
+                countless memories...
+                countless smiles...
+                and one beautiful story. 🥹❤️
+            </p>
+
+            <p class="question">
+                But now I want to know something...
+            </p>
+
+            <h2>
+                How did you feel while reading our story? 💌
+            </h2>
+
+
+            <!-- Review options -->
+            <div class="review-options">
+
+                <button class="review-option" data-review="I cried a little 🥹❤️">
+                    🥹
+                    <span>I cried a little</span>
+                </button>
+
+                <button class="review-option" data-review="I loved it ❤️">
+                    ❤️
+                    <span>I loved it</span>
+                </button>
+
+                <button class="review-option" data-review="It was too emotional 😭">
+                    😭
+                    <span>Too emotional</span>
+                </button>
+
+                <button class="review-option" data-review="You are crazy 😂❤️">
+                    😂
+                    <span>You are crazy</span>
+                </button>
+
+                <button class="review-option" data-review="I want more memories 💗">
+                    💗
+                    <span>I want more memories</span>
+                </button>
+
+            </div>
+
+
+            <!-- Selected message -->
+            <p id="selected-review" class="selected-review"></p>
+
+
+            <!-- Personal message -->
+            <div class="message-section">
+
+                <label for="message">
+                    Tell me what you really felt... ❤️
+                </label>
+
+                <textarea
+                    id="message"
+                    placeholder="Write anything you want to tell me... 🥹❤️"
+                ></textarea>
+
+            </div>
+
+
+            <!-- Send button -->
+            <button id="send-review" class="send-button">
+                💌 Send Your Review
+            </button>
+
+
+            <!-- Final message -->
+            <div id="final-message" class="final-message">
+
+                <div class="final-heart">
+                    ❤️
+                </div>
+
+                <h2>
+                    Thank you, Bagyashree.
+                </h2>
+
+                <p>
+                    Thank you for being part of this story.
+                </p>
+
+                <p>
+                    Our 13 chapters may be complete...
+                </p>
+
+                <strong>
+                    But our story isn't. 🌅❤️
+                </strong>
+
+                <div class="forever">
+                    ∞
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <script src="{{ url_for('static', filename='js/review.js') }}"></script>
+
+</body>
+</html>

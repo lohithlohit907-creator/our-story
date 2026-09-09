@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Our Story ❤️</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/review.css') }}">
+</head>
+
+<body>
+
+    <div class="hearts"></div>
+
+    <main class="review-container">
+
+        <div class="small-text">
+            OUR STORY ISN'T OVER...
+        </div>
+
+        <h1>
+            One Last Thing... ❤️
+        </h1>
+
+        <div class="heart-line">
+            ───── ♥ ─────
+        </div>
+
+        <p class="question">
+            Kanda... ninge nam story na mt nodi yen anustu kanda 
+            <br>
+            ninge yen anustu anta helava kanda 
+        </p>
+
+        <h2>
+            How did you feel? 🥹❤️
+        </h2>
+
+        <form action="/save-review" method="POST">
+
+            <div class="review-box">
+
+                <textarea
+                    name="review"
+                    placeholder="Write what you felt while reading our story... ❤️"
+                    required></textarea>
+
+                <button type="submit">
+                    SEND TO ME ❤️
+                </button>
+
+            </div>
+
+        </form>
+
+        {% if review %}
+
+        <div class="her-review">
+
+            <div class="review-title">
+                HER WORDS ❤️
+            </div>
+
+            <div class="review-content">
+                {{ review }}
+            </div>
+
+        </div>
+
+        {% endif %}
+
+        <div class="final-message">
+            Whatever you write here,
+            <br>
+            I'll keep it close to my heart. ❤️
+        </div>
+
+    </main>
+
+</body>
+
+</html>

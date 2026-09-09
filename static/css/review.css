@@ -1,0 +1,459 @@
+/* =========================================
+   FINAL REVIEW PAGE
+   Same romantic / manga vibe
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background:
+        radial-gradient(circle at 50% 20%, rgba(255, 120, 180, 0.15), transparent 35%),
+        linear-gradient(135deg, #08050c, #160812, #09050c);
+
+    color: #fff;
+    font-family: Georgia, "Times New Roman", serif;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* Soft glowing background */
+
+body::before {
+    content: "";
+    position: fixed;
+    width: 500px;
+    height: 500px;
+
+    background: rgba(255, 80, 160, 0.08);
+    filter: blur(100px);
+    border-radius: 50%;
+
+    top: -150px;
+    left: -150px;
+
+    animation: glow 6s ease-in-out infinite alternate;
+}
+
+body::after {
+    content: "";
+    position: fixed;
+    width: 450px;
+    height: 450px;
+
+    background: rgba(170, 70, 255, 0.07);
+    filter: blur(100px);
+    border-radius: 50%;
+
+    bottom: -150px;
+    right: -150px;
+
+    animation: glow 7s ease-in-out infinite alternate-reverse;
+}
+
+/* Main container */
+
+.review-container {
+    width: min(900px, 90%);
+    min-height: 90vh;
+
+    padding: 60px 50px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    position: relative;
+    z-index: 2;
+
+    background: rgba(15, 7, 17, 0.55);
+
+    border: 1px solid rgba(255, 180, 220, 0.22);
+    border-radius: 25px;
+
+    box-shadow:
+        0 0 40px rgba(255, 80, 160, 0.08),
+        inset 0 0 30px rgba(255, 255, 255, 0.02);
+
+    backdrop-filter: blur(8px);
+}
+
+/* Small heading */
+
+.small-text {
+    font-size: 15px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+
+    color: #d9a9c0;
+
+    margin-bottom: 15px;
+}
+
+/* Main title */
+
+h1 {
+    font-size: clamp(45px, 7vw, 75px);
+    font-weight: 400;
+
+    color: #ffe8f3;
+
+    text-shadow:
+        0 0 10px rgba(255, 150, 200, 0.4),
+        0 0 30px rgba(255, 100, 180, 0.15);
+
+    margin-bottom: 20px;
+
+    animation: titleGlow 3s ease-in-out infinite alternate;
+}
+
+/* Heart divider */
+
+.heart-line {
+    color: #ff9ac7;
+
+    font-size: 20px;
+    letter-spacing: 5px;
+
+    margin-bottom: 40px;
+
+    opacity: 0.9;
+}
+
+/* Question */
+
+.question {
+    font-size: 22px;
+    line-height: 1.8;
+
+    color: #e5cbd8;
+
+    font-style: italic;
+
+    margin-bottom: 25px;
+}
+
+/* How did you feel */
+
+h2 {
+    font-size: 32px;
+    font-weight: 400;
+
+    color: #fff0f7;
+
+    margin-bottom: 25px;
+
+    text-shadow: 0 0 15px rgba(255, 150, 200, 0.25);
+}
+
+/* Review box */
+
+.review-box {
+    width: 100%;
+    max-width: 650px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Text area */
+
+textarea {
+    width: 100%;
+    min-height: 190px;
+
+    resize: vertical;
+
+    padding: 25px;
+
+    border-radius: 20px;
+
+    border: 1px solid rgba(255, 170, 210, 0.35);
+
+    background: rgba(5, 2, 7, 0.75);
+
+    color: #ffeaf4;
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 18px;
+    line-height: 1.6;
+
+    outline: none;
+
+    box-shadow:
+        inset 0 0 25px rgba(255, 80, 160, 0.05),
+        0 0 20px rgba(255, 80, 160, 0.05);
+
+    transition: 0.4s ease;
+}
+
+textarea::placeholder {
+    color: #a98296;
+    font-style: italic;
+}
+
+textarea:focus {
+    border-color: rgba(255, 170, 210, 0.7);
+
+    box-shadow:
+        0 0 25px rgba(255, 100, 170, 0.12),
+        inset 0 0 25px rgba(255, 100, 170, 0.06);
+}
+
+/* Send button */
+
+button {
+    margin-top: 25px;
+
+    padding: 15px 38px;
+
+    border-radius: 50px;
+
+    border: 1px solid rgba(255, 190, 220, 0.6);
+
+    background: rgba(255, 80, 160, 0.08);
+
+    color: #ffeaf4;
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 16px;
+
+    letter-spacing: 2px;
+
+    cursor: pointer;
+
+    transition: all 0.4s ease;
+
+    box-shadow:
+        0 0 15px rgba(255, 80, 160, 0.08);
+}
+
+button:hover {
+    background: rgba(255, 100, 170, 0.18);
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 0 30px rgba(255, 100, 180, 0.25);
+
+    border-color: #ffb5d5;
+}
+
+/* Thank you message */
+
+#thank-you {
+    min-height: 30px;
+
+    margin-top: 20px;
+
+    color: #ffb6d5;
+
+    font-size: 18px;
+
+    font-style: italic;
+
+    transition: 0.5s ease;
+}
+
+/* Final message */
+
+.final-message {
+    margin-top: 35px;
+
+    color: #9f8191;
+
+    font-size: 15px;
+
+    line-height: 1.8;
+
+    letter-spacing: 1px;
+}
+
+/* =========================================
+   Floating hearts
+========================================= */
+
+.hearts::before,
+.hearts::after {
+    content: "♥";
+
+    position: fixed;
+
+    color: rgba(255, 150, 200, 0.25);
+
+    font-size: 25px;
+
+    pointer-events: none;
+
+    z-index: 1;
+}
+
+.hearts::before {
+    left: 12%;
+    bottom: -50px;
+
+    animation: floatHeart 8s linear infinite;
+}
+
+.hearts::after {
+    right: 15%;
+    bottom: -50px;
+
+    font-size: 18px;
+
+    animation: floatHeart 11s linear infinite 3s;
+}
+
+/* =========================================
+   Animations
+========================================= */
+
+@keyframes glow {
+
+    from {
+        transform: scale(1);
+        opacity: 0.6;
+    }
+
+    to {
+        transform: scale(1.25);
+        opacity: 1;
+    }
+}
+
+@keyframes titleGlow {
+
+    from {
+        text-shadow:
+            0 0 10px rgba(255, 150, 200, 0.3);
+    }
+
+    to {
+        text-shadow:
+            0 0 20px rgba(255, 150, 200, 0.5),
+            0 0 40px rgba(255, 100, 180, 0.15);
+    }
+}
+
+@keyframes floatHeart {
+
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+    }
+
+    15% {
+        opacity: 0.5;
+    }
+
+    100% {
+        transform: translateY(-110vh) rotate(25deg);
+        opacity: 0;
+    }
+}
+
+.her-review {
+    width: 100%;
+    max-width: 650px;
+
+    margin-top: 40px;
+    padding: 30px;
+
+    border: 1px solid rgba(255, 170, 210, 0.35);
+    border-radius: 20px;
+
+    background: rgba(20, 5, 15, 0.65);
+
+    box-shadow:
+        0 0 25px rgba(255, 80, 160, 0.08);
+
+    animation: reviewAppear 1s ease;
+}
+
+.review-title {
+    font-size: 14px;
+    letter-spacing: 4px;
+
+    color: #ffb6d5;
+
+    margin-bottom: 20px;
+}
+
+.review-content {
+    color: #ffeaf4;
+
+    font-size: 20px;
+    line-height: 1.8;
+
+    white-space: pre-wrap;
+
+    font-style: italic;
+}
+
+@keyframes reviewAppear {
+
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* =========================================
+   Mobile
+========================================= */
+
+@media (max-width: 600px) {
+
+    .review-container {
+        width: 94%;
+        min-height: 95vh;
+
+        padding: 40px 20px;
+
+        border-radius: 20px;
+    }
+
+    .small-text {
+        font-size: 11px;
+        letter-spacing: 3px;
+    }
+
+    h1 {
+        font-size: 43px;
+    }
+
+    .question {
+        font-size: 18px;
+    }
+
+    h2 {
+        font-size: 26px;
+    }
+
+    textarea {
+        min-height: 170px;
+        font-size: 16px;
+    }
+
+    button {
+        padding: 13px 30px;
+        font-size: 14px;
+    }
+}
