@@ -1,0 +1,95 @@
+{% extends "base.html" %}
+
+{% block title %}
+Our Story ❤️
+{% endblock %}
+
+{% block content %}
+
+<main class="page1">
+
+    <!-- Animated background -->
+    <div class="background-overlay"></div>
+
+    <!-- Floating hearts -->
+    <div class="floating-hearts">
+        <span>♥</span>
+        <span>♡</span>
+        <span>♥</span>
+        <span>♡</span>
+        <span>♥</span>
+        <span>♡</span>
+        <span>♥</span>
+    </div>
+
+    <!-- Soft light -->
+    <div class="romantic-glow"></div>
+
+    <!-- Main content -->
+    <section class="welcome-container">
+
+        <p class="small-text">
+            Every story has a beginning...
+        </p>
+
+        <h1>OUR STORY</h1>
+
+        <div class="heart-divider">
+            <span></span>
+            <i>♥</i>
+            <span></span>
+        </div>
+
+        <p class="subtitle">
+            Enter the date that started ours
+        </p>
+
+        <!-- Date authentication -->
+        <div class="date-container">
+
+            <input
+                type="number"
+                id="day"
+                placeholder="DD"
+                min="1"
+                max="31"
+            >
+
+            <span>/</span>
+
+            <input
+                type="number"
+                id="month"
+                placeholder="MM"
+                min="1"
+                max="12"
+            >
+
+            <span>/</span>
+
+            <input
+                type="number"
+                id="year"
+                placeholder="YYYY"
+                min="2000"
+                max="2100"
+            >
+
+        </div>
+
+        <button id="enter-button">
+            <span>ENTER OUR STORY</span>
+            <span class="button-heart">♥</span>
+        </button>
+
+        <p id="error-message"></p>
+
+    </section>
+
+    <p class="bottom-text">
+        Only we know when it all began.
+    </p>
+
+</main>
+
+{% endblock %}

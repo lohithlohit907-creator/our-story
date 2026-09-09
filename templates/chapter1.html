@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+
+{% block title %}
+Chapter 1 — The Eye Contact ❤️
+{% endblock %}
+
+{% block content %}
+
+<main class="chapter-page">
+
+    <!-- Background -->
+    <div class="chapter-overlay"></div>
+
+    <!-- Floating particles -->
+    <div class="chapter-particles">
+        <span>✦</span>
+        <span>•</span>
+        <span>✦</span>
+        <span>•</span>
+        <span>✦</span>
+        <span>•</span>
+    </div>
+
+    <section class="chapter-content">
+
+        <p class="chapter-number">
+            CHAPTER 01
+        </p>
+
+        <h1>
+            The Eye Contact
+        </h1>
+
+        <div class="chapter-divider">
+            <span></span>
+            <i>♥</i>
+            <span></span>
+        </div>
+
+        <!-- Romantic photo -->
+        <div class="chapter-image-container">
+
+            <img
+                src="{{ url_for('static', filename='images/chapter1/eye-contact.jpeg') }}"
+                alt="The first eye contact"
+                class="chapter-image"
+            >
+
+        </div>
+
+        <!-- Story -->
+        <article class="chapter-story">
+
+            <p>
+                <!-- Write your story here later -->
+            </p>
+
+        </article>
+
+        <!-- Next -->
+        <button id="chapter1-next">
+            NEXT
+            <span>→</span>
+        </button>
+
+    </section>
+
+</main>
+
+{% endblock %}

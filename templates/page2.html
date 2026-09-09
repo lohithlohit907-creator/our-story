@@ -1,0 +1,92 @@
+{% extends "base.html" %}
+
+{% block title %}
+Happy Birthday ❤️
+{% endblock %}
+
+{% block content %}
+
+<main class="birthday-page">
+
+    <!-- Background -->
+    <div class="birthday-overlay"></div>
+
+    <!-- Floating hearts -->
+    <div class="birthday-hearts">
+        <span>❤️</span>
+        <span>💕</span>
+        <span>💗</span>
+        <span>❤️</span>
+        <span>💖</span>
+        <span>💕</span>
+        <span>❤️</span>
+    </div>
+
+    <!-- Main birthday content -->
+    <section class="birthday-content">
+
+        <p class="birthday-small-text">
+            Today is a little more special...
+        </p>
+
+        <h1>
+            HAPPY BIRTHDAY
+        </h1>
+
+        <h2>
+            MY LOVE ❤️
+        </h2>
+
+        <div class="birthday-divider">
+            <span></span>
+            <i>♥</i>
+            <span></span>
+        </div>
+
+        <p class="birthday-message">
+            Today isn't just another day...
+            <br>
+            it's the day someone incredibly special
+            <br>
+            came into this world.
+        </p>
+
+        <!-- Birthday image -->
+        <div class="birthday-image-container">
+
+            <img
+                src="{{ url_for('static', filename='images/birthday/birthday-image.png') }}"
+                alt="Birthday"
+                id="birthday-image"
+            >
+
+        </div>
+
+        <p class="birthday-note">
+            And somehow, I was lucky enough
+            <br>
+            to become a part of your story. ❤️
+        </p>
+
+        <!-- Music -->
+        <audio id="birthday-music" loop>
+            <source
+                src="{{ url_for('static', filename='music/happy-birthday.mp3') }}"
+                type="audio/mpeg"
+            >
+        </audio>
+
+        <button id="music-button">
+            🎵 PLAY BIRTHDAY MUSIC
+        </button>
+
+        <!-- Continue -->
+        <button id="continue-story">
+            CONTINUE TO OUR STORY ❤️
+        </button>
+
+    </section>
+
+</main>
+
+{% endblock %}
